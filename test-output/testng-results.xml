@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-16T19:42:05 IST" name="Default suite" finished-at="2025-09-16T19:42:10 IST" duration-ms="5102">
+  <suite started-at="2025-09-18T00:41:18 IST" name="Default suite" finished-at="2025-09-18T00:41:20 IST" duration-ms="2670">
     <groups>
     </groups>
-    <test started-at="2025-09-16T19:42:05 IST" name="Default test" finished-at="2025-09-16T19:42:10 IST" duration-ms="5102">
-      <class name="day2.DifferentWaystoPOSTRequest">
-        <test-method signature="fetchvaluefromJsonFile()[pri:0, instance:day2.DifferentWaystoPOSTRequest@6f1de4c7]" started-at="2025-09-16T19:42:05 IST" name="fetchvaluefromJsonFile" finished-at="2025-09-16T19:42:10 IST" duration-ms="5048" status="PASS">
+    <test started-at="2025-09-18T00:41:18 IST" name="Default test" finished-at="2025-09-18T00:41:20 IST" duration-ms="2670">
+      <class name="day3.WorkingwithQueryParameter">
+        <test-method signature="fetchvaluefromJsonFile()[pri:0, instance:day3.WorkingwithQueryParameter@6f1de4c7]" started-at="2025-09-18T00:41:18 IST" name="fetchvaluefromJsonFile" finished-at="2025-09-18T00:41:20 IST" duration-ms="2639" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fetchvaluefromJsonFile -->
-      </class> <!-- day2.DifferentWaystoPOSTRequest -->
+      </class> <!-- day3.WorkingwithQueryParameter -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

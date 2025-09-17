@@ -1,0 +1,34 @@
+package day3;
+
+import static io.restassured.RestAssured.given;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import org.json.JSONObject;
+import org.json.JSONTokener;
+import org.testng.annotations.Test;
+
+public class WorkingwithQueryParameter {
+	
+	@Test
+	void fetchvaluefromJsonFile() throws FileNotFoundException {
+		
+		given()
+			.contentType("application/json")
+	        //.header("x-api-key", "iXEgGoFZnzyRO1ECjLX4c0vHpj60gF9mkcNv56LMNChucnw03RY5RNOfaN7sqEC1")  // <-- Add your custom header here
+	        .header("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6ImVSZTlCd0k5V0x6TGM1LXRGSGY2WW16T3J3VVhQd2p1ODU3YXJ3UmVFVHciLCJhbGciOiJSUzI1NiIsIng1dCI6IkpZaEFjVFBNWl9MWDZEQmxPV1E3SG4wTmVYRSIsImtpZCI6IkpZaEFjVFBNWl9MWDZEQmxPV1E3SG4wTmVYRSJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9lYmRmMGU0Yy1lYmUyLTQ3OTMtYWY1Mi1jZWFmOTZmODI3NDEvIiwiaWF0IjoxNzU4MTM1OTE5LCJuYmYiOjE3NTgxMzU5MTksImV4cCI6MTc1ODEzOTgxOSwiYWlvIjoiazJSZ1lIalVWK0o3bTI4R2kxRWE1NE9QSzRVL0FBQT0iLCJhcHBfZGlzcGxheW5hbWUiOiJNU0dyYXBoQXBwIiwiYXBwaWQiOiJmZmE2ZDllZi1iY2RkLTQ0ODktOGE5ZC04NzQ2Y2E5NjFjMWMiLCJhcHBpZGFjciI6IjEiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9lYmRmMGU0Yy1lYmUyLTQ3OTMtYWY1Mi1jZWFmOTZmODI3NDEvIiwiaWR0eXAiOiJhcHAiLCJvaWQiOiJmZTg3YjU0Ni1iNDM0LTQ4OTYtYThkMy0wMWFlN2EzYTYzZDAiLCJyaCI6IjEuQWJFQVRBN2Y2LUxyazBldlVzNnZsdmduUVFNQUFBQUFBQUFBd0FBQUFBQUFBQUN4QUFDeEFBLiIsInJvbGVzIjpbIlVzZXIuUmVhZFdyaXRlLkFsbCIsIkFwcGxpY2F0aW9uLlJlYWRXcml0ZS5BbGwiLCJVc2VyLlJlYWQuQWxsIiwiQXBwUm9sZUFzc2lnbm1lbnQuUmVhZFdyaXRlLkFsbCJdLCJzdWIiOiJmZTg3YjU0Ni1iNDM0LTQ4OTYtYThkMy0wMWFlN2EzYTYzZDAiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiRVUiLCJ0aWQiOiJlYmRmMGU0Yy1lYmUyLTQ3OTMtYWY1Mi1jZWFmOTZmODI3NDEiLCJ1dGkiOiJZZmJNWUEzV19rZXdDS2dPWHg5M0FRIiwidmVyIjoiMS4wIiwid2lkcyI6WyIwOTk3YTFkMC0wZDFkLTRhY2ItYjQwOC1kNWNhNzMxMjFlOTAiXSwieG1zX2Z0ZCI6ImREc0xRT1o2Ymg3bmhvU1lyVU50ZWlZSFYtQnF6ZUdacU10VEdPTHVvdkVCYzNkbFpHVnVZeTFrYzIxeiIsInhtc19pZHJlbCI6IjEwIDciLCJ4bXNfcmQiOiIwLjQyTGpZQkppMnNnb0pNTEJMaVNRT3lfOTJ2UF9SZzU3RXJJRXIwd1JfUWNVNVJRU3lFaDg1RmlkdThsdGMtTGJ5dXd0YWh1QW9oeENBc3dNRUhBQVNnTUEiLCJ4bXNfdGNkdCI6MTcwNjE4MzQ2MX0.GPCJtbGk-kpywXbWWWDbQo2hXaZcu4cJeCb3B_yMV4BvGktPD1Kb7iifdAYRAh60i88s3_V7IZ8YtW1DgFg01mx72xuuNf2duU068V8fqITMI-pxTKkabpniZhsByyFiW0D7lLLhLll6-Yxxt9mQlB4aUvrPZNv_E62YgpYndlrkKy0-t7cD1jm7ckB3Dr_2QRmYTSvs2e0VfTXB8LzI3C1j7Es-pwTSTZ7TpDBKKhrKO5WXq6pAjkBA2S5cw2RABwnR4tD8CwvknOmnbYIu6YCLAwMIFe9KezeqkxLuHoV3HH_qAXbaSIwkitM13xD6N70XZjinxifmznl2XntdhQ") 
+	        .pathParam("mypath", "users")
+	        .queryParam("$filter", "id eq '17622d55-1edc-410a-b076-54a8a2e29e79' and displayName eq 'Samarajit Savalajakar'")
+	        
+		
+		.when()
+			.get("https://graph.microsoft.com/v1.0/{mypath}")
+
+		.then()
+			.statusCode(200)
+	        .log().all();
+	}
+
+}
