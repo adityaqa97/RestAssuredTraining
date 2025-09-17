@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="day2.DifferentWaystoPOSTRequest">
+      <class name="day3.WorkingwithQueryParameter">
         <methods>
           <include name="fetchvaluefromJsonFile"/>
         </methods>
-      </class> <!-- day2.DifferentWaystoPOSTRequest -->
+      </class> <!-- day3.WorkingwithQueryParameter -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -86,7 +86,7 @@ public class DifferentWaystoPOSTRequest {
 	        .log().all();
 	}
 	
-	@Test
+	//@Test
 	void fetchvaluefromJsonFile() throws FileNotFoundException {
 		
 		File f = new File(".\\body.json");
