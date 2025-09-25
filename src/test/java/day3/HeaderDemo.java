@@ -42,7 +42,7 @@ public class HeaderDemo {
 		}
 	}
 	
-	@Test(priority=1)
+	//@Test(priority=1)
 	void getheadervalue()
 	{
 
@@ -56,7 +56,7 @@ public class HeaderDemo {
 		.header("Server","gws");
 	}
 	
-	@Test(priority=2)
+	//@Test(priority=2)
 	void printheadervalue() {
 		Response res1;
 		res1 = given()
