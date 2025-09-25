@@ -5,6 +5,8 @@ import static io.restassured.RestAssured.given;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -34,7 +36,7 @@ public class WorkingwithQueryParameter {
 	        .log().all();
 	}
 
-	@Test
+	//@Test
 	void printCookiesofRequest()
 	{
 
@@ -44,8 +46,14 @@ public class WorkingwithQueryParameter {
 		.get("https://login-tst.parentpaygroup.com/");
 	
 	
-	String cookie_ak_bmsc = res.getCookie("ak_bmsc");
-	System.out.println(cookie_ak_bmsc);
+	//String cookie_ak_bmsc = res.getCookie("ak_bmsc");
+	//System.out.println(cookie_ak_bmsc);
+	
+	Map<String, String> cookie;
+	cookie = res.getCookies();
+	System.out.println(cookie);
+	
+	
 
 	}
 	
